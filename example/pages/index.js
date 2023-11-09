@@ -14,11 +14,8 @@ export default function Index() {
 
   const repositoryUrlDisplay = repositoryExists && repositoryUrl.split('://')[1];
 
-  const hookSettings = {
-    message: 'Hello, custom hook!'
-  }
 
-  const { message } = useUtterances(hookSettings);
+  const Comments = useUtterances();
 
   return (
     <main>
@@ -88,6 +85,8 @@ export default function Index() {
           Add your instructions here!
         </p>
 
+        <Comments />
+
         <h2>Examples</h2>
 
         <h3>Set and grab message</h3>
@@ -106,9 +105,7 @@ const { message } = useUtterances(hookSettings);`}
         <p>
           <strong>Output:</strong>
         </p>
-        <p>
-          { message }
-        </p>
+
       </section>
 
       <footer>
